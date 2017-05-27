@@ -3,7 +3,7 @@ var bodyParser = require("body-parser");
 var path = require("path");
 var mongoose = require("mongoose");
 var Runner = require("./models/Runner");
-var passwds = require("./passwds");
+var pwds = require("./passwds");
 
 var app = express();
 var PORT = 3000;
@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-mongoose.connect(mongopw);
+mongoose.connect(pwds.mong);
 var db = mongoose.connection;
 
 db.on("error", function(error) {
