@@ -17,6 +17,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 mongoose.connect(pwds.mong);
 var db = mongoose.connection;
 
+
 db.on("error", function(error) {
   console.log("Mongoose Error: ", error);
 });
@@ -28,6 +29,7 @@ db.once("open", function() {
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "view.html"));
 });
+
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
